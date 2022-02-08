@@ -1,0 +1,55 @@
+- hosts: all
+  become: yes
+
+  tasks:
+  - name: Ensure ZSH is installed
+    apt:
+      name: zsh
+      state: present
+
+  - name: Ensure git is installed
+    apt: 
+      name: git
+      state: present
+
+  - name: Ensure curl is installed
+    apt:
+      name: curl
+      state: present
+
+  - name: Ensure wget is installed
+    apt:
+      name: wget
+      state: present
+
+  - name: Ensure FiraCode is installed
+    apt:
+      name: fonts-firacode
+      state: present
+
+  - name: Ensure MC is installed
+    apt: 
+      name: mc
+      state: present
+
+  - name: Ensure Python is installed
+    apt:
+      name: python3
+      state: present
+  
+  - name: Ensure PIP is installed
+    apt:
+      name: python3-pip
+      state: present
+
+  - name: Update all packages
+    apt:
+      update_cache: yes
+      name: "*"
+      state: latest
+
+
+# install docker
+# clone dotfiles
+# setup symlink
+# setup wireguard

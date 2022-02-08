@@ -1,0 +1,12 @@
+Log created: 2022-02-08T17:31:44.791022000Z
+Process ID:  92766 (0x16a5e)
+Parent PID:  1 (0x1)
+Executable:  /usr/lib/virtualbox/VBoxHeadless
+Arg[0]: /usr/lib/virtualbox/VBoxHeadless
+Arg[1]: --comment
+Arg[2]: ansible-learning_default_1644333848679_94453
+Arg[3]: --startvm
+Arg[4]: 0233954c-f59a-4f44-844f-aadd95a730a6
+Arg[5]: --vrde
+Arg[6]: config
+AddRef: illegal refcnt=3221225469 state=2
