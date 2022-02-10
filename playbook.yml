@@ -1,56 +1,56 @@
-- hosts: app
+- hosts: all
   become: yes
 
   pre_tasks:
   - name: Update apt cache if needed
-    apt:
+    ansible.builtin.package:
       update_cache: true
       cache_valid_time: 3600
 
-  tasks:
   - name: Ensure Universe Repo is enabled
     apt_repository:
       repo: deb http://archive.ubuntu.com/ubuntu focal universe
       state: present
       update_cache: true
 
+  tasks:
   - name: Ensure ZSH is installed
-    package:
+    ansible.builtin.package:
       name: zsh
       state: present
 
   - name: Ensure git is installed
-    apt: 
+    ansible.builtin.package: 
       name: git
       state: present
 
   - name: Ensure curl is installed
-    apt:
+    ansible.builtin.package:
       name: curl
       state: present
 
   - name: Ensure wget is installed
-    apt:
+    ansible.builtin.package:
       name: wget
       state: present
 
   - name: Ensure FiraCode is installed
-    apt:
+    ansible.builtin.package:
       name: fonts-firacode
       state: present
 
   - name: Ensure MC is installed
-    apt: 
+    ansible.builtin.package: 
       name: mc
       state: present
 
   - name: Ensure Python is installed
-    apt:
+    ansible.builtin.package:
       name: python3
       state: present
   
   - name: Ensure PIP is installed
-    apt:
+    ansible.builtin.package:
       name: python3-pip
       state: present
 
