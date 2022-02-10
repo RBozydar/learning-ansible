@@ -24,10 +24,10 @@ Vagrant.configure("2") do |config|
     alpha.vm.network "private_network", ip: "192.168.60.4"
   end
 
-  # # App Server 2
-  # config.vm.define :beta do |beta|
-  #   beta.vm.hostname = "orc-app2.test"
-  #   beta.vm.network "private_network", ip: "192.168.60.5"
-  # end
+  # App Server 2
+  config.vm.define :beta do |beta|
+    beta.vm.hostname = "orc-app2.test"
+    beta.vm.network "private_network", ip: "192.168.60.5"
+  end
 
 end
