@@ -19,15 +19,15 @@ Vagrant.configure("2") do |config|
   end
 
   # App Server 1
-  config.vm.define "app1" do |app|
-    app.vm.hostname = "orc-app1.test"
-    app.vm.network :private_network, ip: "192.168.60.4"
+  config.vm.define :alpha do |alpha|
+    alpha.vm.hostname = "alpha.test"
+    alpha.vm.network "private_network", ip: "192.168.60.4"
   end
 
-  # App Server 2
-  config.vm.define "app2" do |app|
-    app.vm.hostname = "orc-app2.test"
-    app.vm.network :private_network, ip: "192.168.60.5"
-  end
+  # # App Server 2
+  # config.vm.define :beta do |beta|
+  #   beta.vm.hostname = "orc-app2.test"
+  #   beta.vm.network "private_network", ip: "192.168.60.5"
+  # end
 
 end

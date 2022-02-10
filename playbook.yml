@@ -1,9 +1,21 @@
-- hosts: all
+- hosts: app
   become: yes
 
-  tasks:
-  - name: Ensure ZSH is installed
+  pre_tasks:
+  - name: Update apt cache if needed
     apt:
+      update_cache: true
+      cache_valid_time: 3600
+
+  tasks:
+  - name: Ensure Universe Repo is enabled
+    apt_repository:
+      repo: deb http://archive.ubuntu.com/ubuntu focal universe
+      state: present
+      update_cache: true
+
+  - name: Ensure ZSH is installed
+    package:
       name: zsh
       state: present
 
@@ -41,12 +53,6 @@
     apt:
       name: python3-pip
       state: present
-
-  - name: Update all packages
-    apt:
-      update_cache: yes
-      name: "*"
-      state: latest
 
 
 # install docker
