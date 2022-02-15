@@ -1,0 +1,6 @@
+---
+- src: geerlingguy.docker
+- src: geerlingguy.security
+- src: andrewrothstein.miniconda
+- src: githubixx.ansible_role_wireguard
+- src: gantsign.antigen
