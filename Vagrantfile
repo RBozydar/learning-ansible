@@ -9,6 +9,7 @@ Vagrant.configure("2") do |config|
   config.vm.box = "ubuntu/focal64"
 
   config.ssh.insert_key = false
+  config.ssh.port = 666
 
   config.vm.synced_folder ".", "/vagrant", disabled: true
 
@@ -22,12 +23,14 @@ Vagrant.configure("2") do |config|
   config.vm.define :alpha do |alpha|
     alpha.vm.hostname = "alpha.test"
     alpha.vm.network "private_network", ip: "192.168.60.4"
+    alpha.vm.network "forwarded_port", id: "ssh", host: 2200, guest: 666
   end
 
   # App Server 2
   config.vm.define :beta do |beta|
     beta.vm.hostname = "orc-app2.test"
     beta.vm.network "private_network", ip: "192.168.60.5"
+    beta.vm.network "forwarded_port", id: "ssh", host: 2201, guest: 666
   end
 
 end
