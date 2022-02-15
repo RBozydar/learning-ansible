@@ -1,0 +1,17 @@
+all:
+  children:
+    app:
+      hosts:
+        192.168.60.4
+    db:
+      hosts:
+        db1:
+          ansible_host: 192.168.60.5
+  vars:
+    ansible_ssh_user:
+      vagrant
+    ansible_ssh_private_key_file:
+      ~/.vagrant.d/insecure_private_key
+    ansible_ssh_port:
+      666
+
