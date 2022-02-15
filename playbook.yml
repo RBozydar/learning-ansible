@@ -10,6 +10,11 @@
     ansible.builtin.package:
       update_cache: true
       cache_valid_time: 3600
+  
+  - name: Upgrade all packages
+    ansible.builtin.package:
+      name: "*"
+      state: latest
 
   - name: Ensure Universe Repo is enabled
     apt_repository:
@@ -18,11 +23,12 @@
       update_cache: true
 
   roles:
-    # - role: geerlingguy.docker
-    #   docker_users: vagrant
-    # - geerlingguy.security
-    # - andrewrothstein.miniconda
-    # - githubixx.ansible_role_wireguard
+    - role: geerlingguy.docker
+      docker_users: vagrant
+    - geerlingguy.security
+    - andrewrothstein.miniconda
+    - githubixx.ansible_role_wireguard
+    - gantsign.visual-studio-code
     - role: gantsign.antigen
       users:
         - username: "{{ ansible_ssh_user }}"
