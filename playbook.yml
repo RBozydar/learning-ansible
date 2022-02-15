@@ -88,6 +88,15 @@
       name: python3-pip
       state: present
 
+  - name: Ensure OpenSSH Server is installed
+    ansible.builtin.package:
+      name: openssh-server
+      state: present
+
+  - name: Ensure OpenSSH Client is installed
+    ansible.builtin.package:
+      name: openssh-client
+      state: present
 
 # clone dotfiles
 # setup symlink
