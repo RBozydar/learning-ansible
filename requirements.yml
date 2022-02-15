@@ -4,3 +4,4 @@
 - src: andrewrothstein.miniconda
 - src: githubixx.ansible_role_wireguard
 - src: gantsign.antigen
+- src: gantsign.visual-studio-code
