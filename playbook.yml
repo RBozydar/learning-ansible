@@ -81,6 +81,26 @@
       name: openssh-client
       state: present
 
+  - name: Ensure Samba is installed
+    ansible.builtin.package:
+      name: samba
+      state: present
+  
+  - name: Ensure NFS Common is installed
+    ansible.builtin.package:
+      name: nfs-common
+      state: present
+
+  - name: Ensure NFS kernel is installed
+    ansible.builtin.package:
+      name: nfs-kernel-server
+      state: present
+
+  - name: Ensure Build Essentials are installed
+    ansible.builtin.package:
+      name: build-essential
+      state: present
+
 # clone dotfiles
 # setup symlink
 # setup wireguard
