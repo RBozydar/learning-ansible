@@ -29,23 +29,6 @@
     - andrewrothstein.miniconda
     - githubixx.ansible_role_wireguard
     - gantsign.visual-studio-code
-    - role: gantsign.antigen
-      users:
-        - username: "{{ ansible_ssh_user }}"
-          antigen_libraries:
-            - name: oh-my-zsh
-          antigen_them:
-            name: agnoster
-          antigen_bundles:
-            - name: git
-            - name: common-aliases
-            - name: docker
-            - name: zsh-syntax-highlighting
-              url: zsh-users/zsh-syntax-highlighting
-            - name: zsh-completions
-              url: zsh-users/zsh-completions
-            - name: zsh-autosuggestions
-              url: zsh-users/zsh-autosuggestions
 
   tasks:
   - name: Ensure ZSH is installed
